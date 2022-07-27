@@ -1,8 +1,16 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import '../styles/globals.scss'
+import Layout from '../component/Layout';
+import { AppPropsWithLayout } from '../component/models/layout';
+import { SWRConfig } from 'swr';
+import instance from '../api/instance';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  const LatoutWrapper = Component.Layout ?? Layout;
+  return (
+  <LatoutWrapper>
+    <SWRConfig value={{fetcher: async (url) => await instance.get(url) }}><Component {...pageProps} /></SWRConfig>
+  </LatoutWrapper>
+  );
 }
 
 export default MyApp
