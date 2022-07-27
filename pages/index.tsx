@@ -1,23 +1,11 @@
-import { NextPage } from "next";
-import useSWR from "swr";
-import instance from "../api/instance";
-import useProducts from '../hooks/use-product'
-import styles from '../styles/Home.module.css'
+import React from 'react'
 
-const Home: NextPage = () => {
-  const { data: products, error, create, remove } = useProducts();
-  if(!products) return <div>Loading...</div>
-  if(error) return <div>error</div>;
+type Props = {}
+
+const HomePage = (props: Props) => {
   return (
-    <div className={styles.container}>
-        {products.map((product: any, index: any) => (
-            <div key={index}>
-                {product.name} <button onClick={() => remove(product.id)}>Delete</button>
-            </div>
-        ))}
-        <button onClick={() => create({ id: 15, name: "Product 12" })}>Create</button>
-    </div>
-);
-};
+    <div>HomePage</div>
+  )
+}
 
-export default Home
+export default HomePage

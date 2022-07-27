@@ -8,14 +8,12 @@ const Header  = (props: Props) => {
   return (
     <>
         <ul className="menu">
+            <li>  
+                <img src="https://picsum.photos/50" alt="" />
+            </li>
             <li>
                 <Link href="/">
                     <a className="menu_item">Home page</a>
-                </Link>
-            </li>
-            <li>
-                <Link href="/about">
-                    <a className="menu_item">About</a>
                 </Link>
             </li>
             <li>
@@ -24,8 +22,18 @@ const Header  = (props: Props) => {
                 </Link>
             </li>
             <li>
+                <Link href="/about">
+                    <a className="menu_item">Admin</a>
+                </Link>
+            </li>
+            <li>
                 <Link href="/contact">
-                    <a className="menu_item">Contact</a>
+                    <a className="menu_item">Blog</a>
+                </Link>
+            </li>
+            <li>
+                <Link href="/lienhe">
+                    <a className="menu_item">Liên hệ</a>
                 </Link>
             </li>
         </ul>
