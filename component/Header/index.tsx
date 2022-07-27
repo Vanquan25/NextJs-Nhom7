@@ -36,6 +36,11 @@ const Header  = (props: Props) => {
                     <a className="menu_item">Liên hệ</a>
                 </Link>
             </li>
+            <li>
+            <Link href="/signin">
+                    <a className="menu_item">Login</a>
+                </Link>
+            </li>
         </ul>
     </>
 );
